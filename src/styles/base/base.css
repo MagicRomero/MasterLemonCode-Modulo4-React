@@ -11,6 +11,8 @@ body {
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   text-rendering: optimizeLegibility;
   font-size: 16px;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 ul {

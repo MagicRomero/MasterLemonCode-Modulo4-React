@@ -28,6 +28,7 @@ module.exports = {
     plugins: [new TsconfigPathsPlugin()],
   },
   devServer: {
+    historyApiFallback: true,
     contentBase: path.resolve(__dirname, "./dist"),
     port: 4001,
     open: true,

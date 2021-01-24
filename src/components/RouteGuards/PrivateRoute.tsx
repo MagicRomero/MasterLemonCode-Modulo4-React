@@ -1,7 +1,7 @@
 import React from "react";
 import { Redirect, Route, RouteComponentProps } from "react-router-dom";
+import Auth from "@lib/auth";
 
-React.Component;
 const PrivateRoute: React.FC<RouteComponentProps> = ({
   children,
   ...restProps
@@ -9,13 +9,15 @@ const PrivateRoute: React.FC<RouteComponentProps> = ({
   return (
     <Route
       {...restProps}
-      render={() => {
+      render={({ location }) => {
         const isAuth = true;
-        if (isAuth) {
+        if (Auth.isAuthenticated()) {
           return children;
         }
 
-        return <Redirect to="/login" />;
+        return (
+          <Redirect to={{ pathname: "/login", state: { from: location } }} />
+        );
       }}
     />
   );
