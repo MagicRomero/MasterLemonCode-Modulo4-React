@@ -37,6 +37,7 @@ const Login: React.FC = (): JSX.Element => {
   ) : (
     <form onSubmit={handleSubmit} className={styles.FormWrapper}>
       <CustomInput
+        required
         onChange={onChange}
         type="email"
         placeholder="example@email.com"
@@ -44,6 +45,7 @@ const Login: React.FC = (): JSX.Element => {
         value={formValues.email}
       />
       <CustomInput
+        required
         onChange={onChange}
         type="password"
         placeholder="*******"
